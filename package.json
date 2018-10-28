@@ -40,6 +40,7 @@
     "eslint-plugin-import": "^2.14.0"
   },
   "dependencies": {
+    "aws-sdk": "^2.344.0",
     "body-parser": "^1.18.3",
     "bull": "^3.4.8",
     "concurrently": "^4.0.1",
