@@ -1,0 +1,41 @@
+{
+  "name": "primost",
+  "version": "0.0.1",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "./node_modules/.bin/babel src -d dist",
+    "build:watch": "./node_modules/.bin/babel src -d dist --watch",
+    "start:watch": "./node_modules/.bin/nodemon dist/index.js",
+    "dev": "./node_modules/.bin/concurrently -n build,server -c white.bold,magenta.bold \"yarn build:watch\" \"yarn start:watch\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dragma/primost.git"
+  },
+  "keywords": [
+    "mailing",
+    "queue",
+    "aws",
+    "redis",
+    "server",
+    "http"
+  ],
+  "author": "Florent Béjina",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dragma/primost/issues"
+  },
+  "homepage": "https://github.com/dragma/primost#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "eslint": "^5.8.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0"
+  },
+  "dependencies": {
+    "concurrently": "^4.0.1",
+    "nodemon": "^1.18.5"
+  }
+}
