@@ -63,3 +63,4 @@ typings/
 # dist folder
 dist/
 config.js
+data/
