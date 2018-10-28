@@ -5,14 +5,14 @@ import rfs from 'rotating-file-stream';
 import { LOG_DIRECTORY } from '../../config';
 
 // create a rotating write stream
-const createAccessLogStream = () => {
+const createAccessLogStream = (filename) => {
   const logDirectory = path.join(__dirname, '..', '..', LOG_DIRECTORY);
 
   // ensure log directory exists
   if (!fs.existsSync(logDirectory)) {
     fs.mkdirSync(logDirectory);
   }
-  return rfs('access.log', {
+  return rfs(filename, {
     interval: '1d', // rotate daily
     path: logDirectory,
     compress: 'gzip',

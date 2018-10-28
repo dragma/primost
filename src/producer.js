@@ -26,7 +26,7 @@ if (NODE_ENV !== 'production') {
   app.use(morgan('dev'));
 }
 if (LOG_IN_FILE) {
-  const logStream = createLogStream();
+  const logStream = createLogStream('producer.log');
   app.use(morgan('combined', { stream: logStream }));
 }
 
