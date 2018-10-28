@@ -19,6 +19,11 @@ const config = {
     cci: 'cci',
     attachments: 'pj',
   },
+
+  // redis configration
+  REDIS_HOST: 'localhost',
+  REDIS_PORT: 6379,
+  REDIS_PASSWORD: false,
 };
 
 module.exports = config;
