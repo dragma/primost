@@ -5,4 +5,9 @@ const malformed = fields => createError(
   `Missing required email fields : ${fields.map(f => `"${f}"`).join(',')}`,
 );
 
-export { malformed };
+const wrongToken = () => createError(
+  400,
+  'Wrong token',
+);
+
+export { malformed, wrongToken };

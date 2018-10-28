@@ -4,6 +4,7 @@ import cors from 'cors';
 import morgan from 'morgan';
 
 import createLogStream from './utils/logStream';
+import decode from './utils/decode';
 import formatData from './utils/formatEmailData';
 import checkData from './utils/checkEmailData';
 import queue from './utils/queueEmail';
@@ -30,6 +31,6 @@ if (LOG_IN_FILE) {
   app.use(morgan('combined', { stream: logStream }));
 }
 
-app.post(ENTRY_POINT, formatData, checkData, queue);
+app.post(ENTRY_POINT, decode, formatData, checkData, queue);
 
 app.listen(APP_PORT, () => console.log(`[SERVER] is running at port ${APP_PORT}`));
