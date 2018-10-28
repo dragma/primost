@@ -12,8 +12,8 @@ const REQUIRED_FIELDS = [
   'subject',
   'from',
   'to',
-  'msg_raw',
-  'msg_hml',
+  'text',
+  'html',
 ];
 
 const check = (req, res, next) => {

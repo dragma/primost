@@ -1,12 +1,29 @@
 
-import { EMAIL_KEYS_MAPPING } from '../../config';
+import { EMAIL_KEYS_MAPPING, ATTACHMENTS_KEY_MAPPING } from '../../config';
 
-const formatData = (data) => {
+
+const formatAttachments = (data) => {
+  const keys = Object.keys(data);
+  const temp = keys.reduce((acc, key) => {
+    const customKey = ATTACHMENTS_KEY_MAPPING[key] || key;
+    acc[customKey] = data[key];
+
+    return acc;
+  }, {});
+  return temp;
+};
+
+
+const formatEmailData = (data) => {
   const keys = Object.keys(data);
   return keys.reduce((acc, key) => {
     const customKey = EMAIL_KEYS_MAPPING[key] || key;
 
-    acc[customKey] = data[key];
+    if (customKey !== 'attachments') {
+      acc[customKey] = data[key];
+    } else {
+      acc[customKey] = data[key].map(formatAttachments);
+    }
 
     return acc;
   }, {});
@@ -15,7 +32,7 @@ const formatData = (data) => {
 
 const format = (req, res, next) => {
   const data = Object.assign({}, req.body);
-  req.emailData = formatData(data);
+  req.emailData = formatEmailData(data);
   next();
 };
 

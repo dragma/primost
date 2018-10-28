@@ -5,20 +5,27 @@ const config = {
   LOG_IN_FILE: true,
   LOG_DIRECTORY: 'log',
 
+  // email configuration
   EMAIL_KEYS_MAPPING: {
     priority: 'priority',
     sujet: 'subject',
     from: 'from',
     fromName: 'fromName',
-    replyto: 'replyto',
+    replyto: 'replyTo',
     returnPath: 'returnPath',
     to: 'to',
-    msg_raw: 'msg_raw',
-    msg_html: 'msg_html',
+    msg_raw: 'text',
+    msg_html: 'html',
     cc: 'cc',
-    cci: 'cci',
-    attachments: 'pj',
+    bcc: 'cci',
+    pj: 'attachments',
   },
+  ATTACHMENTS_KEY_MAPPING: {
+    nom: 'filename',
+    url: 'path',
+    contentType: 'contentType',
+  },
+  EMAIL_DELAY: 100, // delay between 2 jobs, in ms
 
   // redis configration
   REDIS_HOST: 'localhost',
