@@ -1,7 +1,7 @@
 const config = {
   NODE_ENV: 'dev', // or 'production'
-  APP_PORT: 3000, // or any port you'd like
-  ENTRY_POINT: '/', // or any route you want ie: /email/receive
+  PORT: 3000, // or any port you'd like
+  END_POINT: '/', // or any route you want ie: /email/receive
 
   // secret
   JWT_SECRET: 'shhhh',
@@ -25,7 +25,7 @@ const config = {
     bcc: 'cci',
     pj: 'attachments',
   },
-  ATTACHMENTS_KEY_MAPPING: {
+  ATTACHMENTS_KEYS_MAPPING: {
     nom: 'filename',
     url: 'path',
     contentType: 'contentType',

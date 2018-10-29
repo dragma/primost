@@ -10,7 +10,7 @@ import checkData from './utils/checkEmailData';
 import queue from './utils/queueEmail';
 
 import {
-  NODE_ENV, APP_PORT, ENTRY_POINT, LOG_IN_FILE,
+  NODE_ENV, PORT, END_POINT, LOG_IN_FILE,
 } from '../config';
 
 const app = express();
@@ -31,6 +31,6 @@ if (LOG_IN_FILE) {
   app.use(morgan('combined', { stream: logStream }));
 }
 
-app.post(ENTRY_POINT, decode, formatData, checkData, queue);
+app.post(END_POINT, decode, formatData, checkData, queue);
 
-app.listen(APP_PORT, () => console.log(`[SERVER] is running at port ${APP_PORT}`));
+app.listen(PORT, () => console.log(`[SERVER] is running at port ${PORT}`));

@@ -1,11 +1,11 @@
 
-import { EMAIL_KEYS_MAPPING, ATTACHMENTS_KEY_MAPPING } from '../../config';
+import { EMAIL_KEYS_MAPPING, ATTACHMENTS_KEYS_MAPPING } from '../../config';
 
 
 const formatAttachments = (data) => {
   const keys = Object.keys(data);
   const temp = keys.reduce((acc, key) => {
-    const customKey = ATTACHMENTS_KEY_MAPPING[key] || key;
+    const customKey = ATTACHMENTS_KEYS_MAPPING[key] || key;
     acc[customKey] = data[key];
 
     return acc;
