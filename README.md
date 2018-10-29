@@ -132,6 +132,30 @@ const REQUIRED_FIELDS = [
 ];
 ```
 
+## Start production
+
+```shell
+# create config file frome the sample
+cp config.sample.js config.js
+
+#edit your config file
+nano config.js 
+
+# run redis
+docker-compose up redis -d 
+
+# install dependencies
+yarn
+
+# start producer and consumer
+yarn start:producer:prod
+yarn start:consumer:prod
+
+# or stop them
+yarn stop:producer:prod
+yarn stop:consumer:prod
+```
+
 ## Start dev
 
 ```shell
@@ -147,6 +171,6 @@ docker-compose up redis -d
 # install dependencies
 yarn
 
-# yard dev builds, and start all process
+# yarn dev builds and start all process
 yarn dev
 ```
