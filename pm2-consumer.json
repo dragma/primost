@@ -1,0 +1,14 @@
+{
+  "apps": [
+    {
+      "exec_mode": "fork_mode",
+      "script": "dist/consumer.js",
+      "name": "primost consumer",
+      "node_args": [
+        "--harmony"
+      ],
+      "error_file": "log/err.log",
+      "out_file": "log/out.log"
+    }
+  ]
+}

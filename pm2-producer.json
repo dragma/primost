@@ -1,0 +1,14 @@
+{
+  "apps": [
+    {
+      "exec_mode": "fork_mode",
+      "script": "dist/producer.js",
+      "name": "primost producer",
+      "node_args": [
+        "--harmony"
+      ],
+      "error_file": "log/err.log",
+      "out_file": "log/out.log"
+    }
+  ]
+}
