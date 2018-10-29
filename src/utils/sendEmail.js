@@ -7,7 +7,7 @@ import { EMAIL_DELAY } from '../../config';
 export default job => new Promise((resolve) => {
   const mail = buildEmail(job.data);
 
-  return mail.build((err, message) => {
+  return mail.compile().build((err, message) => {
     SES
       .sendRawEmail({ RawMessage: { Data: message } })
       .promise()

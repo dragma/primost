@@ -1,4 +1,4 @@
-import MailComposer from 'mailcomposer';
+import MailComposer from 'nodemailer/lib/mail-composer';
 
 export default (data) => {
   const {

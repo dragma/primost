@@ -33,6 +33,12 @@ const formatEmailData = (data) => {
 const format = (req, res, next) => {
   const data = Object.assign({}, req.body);
   req.emailData = formatEmailData(data);
+  if (req.emailData.fromName) {
+    req.emailData.from = {
+      name: req.emailData.fromName,
+      address: req.emailData.from,
+    };
+  }
   req.emailData.id = req.id;
   next();
 };
