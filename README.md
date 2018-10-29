@@ -6,7 +6,7 @@ http server that catch sending emails requets, put them in a prioritized queue, 
 
 - [express](https://www.npmjs.com/package/express)
 - [bull](https://www.npmjs.com/package/bull)
-- [mailcomposer](https://www.npmjs.com/package/mailcomposer)
+- [nodemailer/mailcomposer](https://www.npmjs.com/package/nodemailer)
 - [aws-sdk](https://www.npmjs.com/package/aws-sdk)
 - [jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken)
 
@@ -36,6 +36,7 @@ You should copy this file with `cp config.sample.js config.js` and edit it with 
 
 |key|value|description|default|required|
 |---|---|---|---|---|
+|`LOG_IN_CONSOLE`|Boolean|Api calls will be logged in console|true|**yes**|
 |`LOG_IN_FILE`|Boolean|Api calls will be logged in file in `./LOG_DIRECTORY/consumer.log`|true|**yes**|
 |`LOG_DIRECTORY`|String|Directory where the log files will be stored. The path is relative to project root directory.|`log`|**yes** (if `LOG_IN_FILE === true`)|
 
