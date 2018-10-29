@@ -7,6 +7,7 @@ const config = {
   JWT_SECRET: 'shhhh',
 
   // logger configuration
+  LOG_IN_CONSOLE: true,
   LOG_IN_FILE: true,
   LOG_DIRECTORY: 'log',
 
