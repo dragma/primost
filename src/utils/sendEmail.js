@@ -16,6 +16,7 @@ export default job => new Promise((resolve) => {
         setTimeout(resolve, EMAIL_DELAY);
       })
       .catch(() => {
+        logger(job.data, true);
         setTimeout(resolve, EMAIL_DELAY);
       });
   });
