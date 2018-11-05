@@ -31,6 +31,8 @@ You should copy this file with `cp config.sample.js config.js` and edit it with 
 |`PORT`|Number|http server port|`3000`|**yes**|
 |`END_POINT`|String|Server endpoint where you'll post requests|`/`|**yes**|
 |`JWT_SECRET`|String|Secret that will be used by JWT to decrypt data|`shhhh`|**yes**|
+|`EMAIL_DELAY`|Number|Time in **ms** the process has to wait before sending another email. AWS SES have some limitations, like 12 emails/sec|`100`|**yes**|
+|`DELAY_ON_ACKNOWLEDGE`|Boolean|When `true`, waits for SES response before waiting `EMAIL_DELAY` between 2 jobs. When `false`, a job is executed every `EMAIL_DELAY`. **`false` increses significantly sending rate**|false|**yes**|
 
 ### Logger configuration
 
@@ -44,7 +46,6 @@ You should copy this file with `cp config.sample.js config.js` and edit it with 
 
 |key|value|description|default|required|
 |---|---|---|---|---|
-|`EMAIL_DELAY`|Number|Time in **ms** the process has to wait before sending another email. AWS SES have some limitations, like 12 emails/sec|`100`|**yes**|
 |`EMAIL_KEYS_MAPPING`|Object|See [Fields mapping](#fields-mapping)|--|**yes**|
 |`ATTACHMENTS_KEYS_MAPPING`|Object|See [Fields mapping](#fields-mapping)|--|**yes**|
 

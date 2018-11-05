@@ -2,6 +2,8 @@ const config = {
   NODE_ENV: 'dev', // or 'production'
   PORT: 3000, // or any port you'd like
   END_POINT: '/', // or any route you want ie: /email/receive
+  EMAIL_DELAY: 100, // delay between 2 jobs, in ms
+  DELAY_ON_ACKNOWLEDGE: true, // wait SES response before executing the next job
 
   // secret
   JWT_SECRET: 'shhhh',
@@ -31,7 +33,6 @@ const config = {
     url: 'path',
     contentType: 'contentType',
   },
-  EMAIL_DELAY: 100, // delay between 2 jobs, in ms
 
   // redis configration
   REDIS_HOST: 'localhost',
