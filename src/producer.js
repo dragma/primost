@@ -7,7 +7,7 @@ import uuid from 'uuid';
 import decode from './utils/decode';
 import formatData from './utils/formatEmailData';
 import checkData from './utils/checkEmailData';
-import queue from './utils/queueEmail';
+import queue from './utils/queueEmailMiddleware';
 
 import logger from './utils/producerLogger';
 

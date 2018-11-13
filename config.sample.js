@@ -4,6 +4,8 @@ const config = {
   END_POINT: '/', // or any route you want ie: /email/receive
   EMAIL_DELAY: 100, // delay between 2 jobs, in ms
   DELAY_ON_ACKNOWLEDGE: true, // wait SES response before executing the next job
+  RETRY_ON_THROTTLE: true,
+  RETRY_DELAY: 1000 * 60 * 60, // delay before retry in ms
 
   // secret
   JWT_SECRET: 'shhhh',

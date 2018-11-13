@@ -33,6 +33,8 @@ You should copy this file with `cp config.sample.js config.js` and edit it with 
 |`JWT_SECRET`|String|Secret that will be used by JWT to decrypt data|`shhhh`|**yes**|
 |`EMAIL_DELAY`|Number|Time in **ms** the process has to wait before sending another email. AWS SES have some limitations, like 12 emails/sec|`100`|**yes**|
 |`DELAY_ON_ACKNOWLEDGE`|Boolean|When `true`, waits for SES response before waiting `EMAIL_DELAY` between 2 jobs. When `false`, a job is executed every `EMAIL_DELAY`. **`false` increses significantly sending rate**|false|**yes**|
+|`RETRY_ON_THROTTLE`|Boolean|When `true`, if maximum sending rate per day is exceeded, put the job back in the queue with a `RETRY_DELAY` delay.|false|**yes**|
+|`RETRY_DELAY`|Number|Time in **ms**|`1000 * 60 * 60` (1 hour)|**yes**|
 
 ### Logger configuration
 
