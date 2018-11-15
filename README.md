@@ -108,7 +108,7 @@ const config = {
 }
 ```
 
-> Note : **All fields must be provided, event if ther is no mapping**
+> Note : **All fields must be provided, even if there is no mapping to setup**
  
 ## Usage
 
