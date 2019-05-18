@@ -13,7 +13,7 @@ http server that catch sending emails requets, put them in a prioritized queue, 
 ## Prerequisities
 
 You must have a `redis` instance available.
-A `docker-compose.yml` file is includeed if you need it.
+A `docker-compose.yml` file is included if you need it.
 
 Primost must be configured with a `config.js` file placed at the projet root. There is a file named [`config.sample.json`](./blob/master/config.sample.js) to help you do that.
 
